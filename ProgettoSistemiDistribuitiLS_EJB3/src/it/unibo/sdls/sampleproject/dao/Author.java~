@@ -1,0 +1,64 @@
+package it.unibo.sdls.sampleproject.dao;
+
+import java.io.Serializable;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+
+public class Author {
+	
+	/**
+	 * Serial Version UID 
+	 */
+	private static final long serialVersionUID = 3103905839384102117L;
+
+	protected int id;
+	
+	protected String name;
+	
+	
+	public Author() {}
+	
+	public Author(String name) {
+		this.name = name;
+	}
+	
+	public Author(String name, Set<Book> books) {
+		this.name = name;
+		this.books = books;
+	}
+
+	protected Set<Book> books;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Set<Book> getBooks() {
+		return books;
+	}
+
+	public void setBooks(Set<Book> books) {
+		this.books = books;
+	}
+
+}

@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+
+<project name="Progetto Sistemi Distribuiti LS (versione EJB3)" basedir=".." default="prepare">
+
+	<!-- ================ -->
+	<!-- Properties setup -->
+	<!-- ================ -->
+
+	<target 
+		name="set.properties" 
+		description="Sets up properties"
+	>
+		<!-- Environment properties -->
+		<property file="ant/environment.properties"/>
+		<!-- Project properties -->
+		<property file="ant/project.properties"/>
+		<!-- Project structure -->
+	    <property name="src.dir" value="src"/>
+		
+		<property name="src-test.dir" value="src-test"/>
+	    <property name="lib.dir" value="lib"/>
+	    <property name="web.dir" value="web"/>
+	    <property name="build.dir" value="${basedir}/build/classes"/>
+		<property name="build-test.dir" value="${basedir}/build/tests/classes"/>
+		<property name="tmp.dir" value="tmp"/>
+		<property name="database.name" value="sampleProjectDB.data"/>
+		<property name="database.file" value="sampleProjectDB"/>
+		<property name="build.reports" value="${basedir}/build/reports"/>
+		<property name="resources.dir" value="${basedir}/resources"/>
+		<property name="conf.dir" value="${basedir}/bootstrap"/>
+		<property name="dd.dir"  value="${basedir}/dd"/>
+	</target>
+
+	<target 
+		name="set.classpath" depends="set.properties" 
+		description="Sets up classpath properties for other tasks"
+	>
+	    <path id="master-classpath">
+   	    	<!-- Libraries that have to be available at run-time, on the server -->
+	        <fileset dir="${lib.dir}">
+	            <include name="**/*.jar"/>
+	        </fileset>
+	    	<!-- Project classes -->
+	        <pathelement path="${build.dir}"/>
+	    	<pathelement path="${build-test.dir}"/>
+	    </path>
+		
+	      <path id="junit.classpath">
+	      	<fileset dir="${deploy.path}/../../../client/">
+	      		<include name="**/*.jar"/>
+	      	</fileset>
+	         <pathelement location="${build-test.dir}"/>
+	         <fileset dir="${lib.dir}">
+	            <include name="**/*.jar"/>
+	         </fileset>
+	      	<pathelement location="${build.dir}"/>
+	      </path>
+		
+	     
+		
+	</target>
+
+	<!-- ============= -->
+	<!-- Project tasks -->
+	<!-- ============= -->
+
+	<target 
+		name="clean" depends="set.properties"
+		description="Cleans built classes"
+	>
+        <delete dir="${build.dir}"/>
+		<delete>
+			<fileset dir="${tmp.dir}" includes="*"/>
+		</delete>
+	</target>
+
+	<target 
+		name="prepare" depends="set.properties"
+		description="Creates project structure, if needed"
+	>
+        <mkdir dir="${src.dir}"/>
+		<mkdir dir="${lib.dir}"/>
+		<mkdir dir="${web.dir}"/>
+		<mkdir dir="${web.dir}/WEB-INF"/>
+		<mkdir dir="${web.dir}/WEB-INF/lib"/>
+        <mkdir dir="${tmp.dir}"/>
+	</target>
+    
+	<target 
+    	name="build" depends="clean, prepare, set.classpath"
+		description="Compile main source tree java files"
+    >
+        <mkdir dir="${build.dir}"/>
+		<mkdir dir="${build-test.dir}"/>
+        <javac 
+        	destdir="${build.dir}" 
+        	debug="true"
+        	deprecation="false" 
+        	optimize="false" 
+        	failonerror="true">
+	            <src path="${src.dir}"/>
+    	        <classpath refid="master-classpath"/>
+        </javac>
+		<javac 
+        	destdir="${build-test.dir}" 
+        	debug="true"
+        	deprecation="false" 
+        	optimize="false" 
+        	failonerror="true">
+	            <src path="${src-test.dir}"/>
+    	        <classpath refid="master-classpath"/>
+        </javac>
+    </target>
+	
+
+
+	<target name="undeploy" depends="set.properties">
+		<delete file="${deploy.path}/${webapp.name}.war"/>
+	</target>
+	
+    
+	
+	<target name="deploy-datasource">
+		<!--<copy todir="${deploy.path}" file="${dd.dir}/MySQL-ds.xml" overwrite="false"/>-->
+	</target>
+	
+	
+	<target 
+    	name="deploy" depends="undeploy, build,deploy-datasource,ear" 
+    	description="Deploys the application as a JAR file"
+    >
+		
+        
+        <copy todir="${deploy.path}" overwrite="false">
+            <fileset dir="${tmp.dir}">
+                <include name="${webapp.name}.ear"/>
+            </fileset>
+        </copy>
+    	<delete file="${tmp.dir}/${webapp.name}.ear"/>
+    </target>
+	
+	<target name="ear" depends="set.properties,jar,war">
+		<ear destfile="${tmp.dir}/${webapp.name}.ear" appxml="${dd.dir}/ear/application.xml">
+			<fileset dir="${tmp.dir}" includes="*.jar, *.war" />
+		</ear>
+	</target>
+	
+	<target name="jar" depends="set.properties">
+		<mkdir dir="${build.dir}/META-INF"/>
+		<copy todir="${build.dir}/META-INF" file="${dd.dir}/persistence.xml"/>
+	
+		<jar destfile="${tmp.dir}/${webapp.name}.jar" basedir="${build.dir}">
+		</jar>
+	</target>
+
+
+	<target name="war" depends="set.properties">
+		<war destfile="${tmp.dir}/${webapp.name}.war"
+	             webxml="${web.dir}/WEB-INF/web.xml">
+	            <fileset dir="${web.dir}">
+	                <include name="**/**"/>
+	            </fileset>
+	        </war>
+	</target>
+	
+    <!-- ============== -->
+	<!-- Test	  tasks -->
+	<!-- ============== -->
+	
+	<target name="tests" depends="build">
+
+		      <mkdir dir="${build.reports}"/>
+		      <junit printsummary="yes"
+		             haltonerror="false"
+		             haltonfailure="false"
+		             fork="true">
+
+		         <!-- clean shutdown so we don't keep any file locks -->
+		         <sysproperty key="shutdown.embedded.jboss" value="true"/>
+
+		      	<classpath>
+		          <path refid="junit.classpath"/>
+		         </classpath>
+		         <formatter type="plain" usefile="true"/>
+		         <formatter type="xml" usefile="true"/>
+
+		         <batchtest todir="${build.reports}"
+		                    haltonerror="false"
+		                    haltonfailure="false"
+		                    fork="true">
+
+		            <fileset dir="${build-test.dir}">
+		               <include name="**/online/*.class"/>
+		            </fileset>
+		         </batchtest>
+		      </junit>
+		   </target>
+	
+	
+    <!-- ============== -->
+	<!-- Database tasks -->
+	<!-- ============== -->
+
+	<target name="hsqldb.database.start" depends="prepare, set.classpath">
+		<java classname="org.hsqldb.Server" fork="yes">
+			<classpath refid="master-classpath" />
+			<arg value="-database.0"/>
+			<arg value="${deploy.path}/../data/hypersonic/${database.file}"/>
+			<arg value="-dbname.0"/>
+			<arg value="${deploy.path}/../data/hypersonic/${database.name}"/>
+			
+		</java>
+	</target>
+
+	<target name="hsqldb.database.frontend" depends="set.properties, set.classpath">
+		<java classname="org.hsqldb.util.DatabaseManager" fork="yes">
+			<classpath refid="master-classpath" />
+		</java>
+	</target>
+
+</project>

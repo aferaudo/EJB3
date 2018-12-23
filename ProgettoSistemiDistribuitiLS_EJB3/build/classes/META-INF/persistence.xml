@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<persistence>
+	<persistence-unit name="MySQLDSUnit">
+		<jta-data-source>java:jboss/datasources/MySQLDS</jta-data-source>
+		
+		<!-- List of annotated classes -->
+		<class>it.unibo.sdls.sampleproject.dao.Author</class>
+		<class>it.unibo.sdls.sampleproject.dao.Book</class>
+		<class>it.unibo.sdls.sampleproject.dao.Publisher</class>
+		<exclude-unlisted-classes/>
+		
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQL5Dialect" />
+			<property name="hibernate.show_sql" value="true"/>
+		</properties>
+	</persistence-unit>
+</persistence>
+

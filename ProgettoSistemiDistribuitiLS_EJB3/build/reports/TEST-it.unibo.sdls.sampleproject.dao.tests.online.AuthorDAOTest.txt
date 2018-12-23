@@ -1,0 +1,5 @@
+Testsuite: it.unibo.sdls.sampleproject.dao.tests.online.AuthorDAOTest
+Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 1,065 sec
+
+Testcase: addAuthor took 0,513 sec
+Testcase: addAuthor_andRelatedBooks took 0,466 sec

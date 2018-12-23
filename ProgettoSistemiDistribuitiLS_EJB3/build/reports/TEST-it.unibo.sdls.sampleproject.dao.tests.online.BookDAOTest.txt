@@ -1,0 +1,4 @@
+Testsuite: it.unibo.sdls.sampleproject.dao.tests.online.BookDAOTest
+Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 0,527 sec
+
+Testcase: addBook_with_publisher took 0,482 sec

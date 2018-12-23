@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="ste-laptop" name="it.unibo.sdls.sampleproject.dao.tests.online.AuthorDAOTest" tests="2" time="1.065" timestamp="2009-04-27T11:35:11">
+  <properties>
+    <property name="java.vendor" value="Sun Microsystems Inc." />
+    <property name="lib.dir" value="lib" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="database.name" value="sampleProjectDB.data" />
+    <property name="eclipse.pdebuild.templates" value="/home/ste/EclipseInstallation/eclipse/plugins/org.eclipse.pde.build_3.4.1.R34x_v20081217/templates//" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Server Compiler" />
+    <property name="os.name" value="Linux" />
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-1.5.0-sun-1.5.0.16/jre/lib/rt.jar:/usr/lib/jvm/java-1.5.0-sun-1.5.0.16/jre/lib/i18n.jar:/usr/lib/jvm/java-1.5.0-sun-1.5.0.16/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-1.5.0-sun-1.5.0.16/jre/lib/jsse.jar:/usr/lib/jvm/java-1.5.0-sun-1.5.0.16/jre/lib/jce.jar:/usr/lib/jvm/java-1.5.0-sun-1.5.0.16/jre/lib/charsets.jar:/usr/lib/jvm/java-1.5.0-sun-1.5.0.16/jre/classes" />
+    <property name="sun.desktop" value="gnome" />
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="ant.home" value="/home/ste/EclipseInstallation/eclipse/plugins/org.apache.ant_1.7.0.v200803061910" />
+    <property name="java.runtime.version" value="1.5.0_16-b02" />
+    <property name="user.name" value="ste" />
+    <property name="dd.dir" value="/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3/dd" />
+    <property name="build.dir" value="/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3/build/classes" />
+    <property name="user.language" value="it" />
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-1.5.0-sun-1.5.0.16/jre/lib/amd64" />
+    <property name="ant.project.name" value="Progetto Sistemi Distribuiti LS (versione EJB3)" />
+    <property name="java.version" value="1.5.0_16" />
+    <property name="user.timezone" value="" />
+    <property name="resources.dir" value="/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3/resources" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-1.5.0-sun-1.5.0.16/jre/lib/endorsed" />
+    <property name="appserver.home" value="/opt/jboss" />
+    <property name="sun.cpu.isalist" value="" />
+    <property name="sun.jnu.encoding" value="UTF-8" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="/" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="build-test.dir" value="/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3/build/tests/classes" />
+    <property name="java.class.version" value="49.0" />
+    <property name="user.country" value="IT" />
+    <property name="java.home" value="/usr/lib/jvm/java-1.5.0-sun-1.5.0.16/jre" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="ant.file" value="/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3/ant/build.xml" />
+    <property name="os.version" value="2.6.27-11-generic" />
+    <property name="path.separator" value=":" />
+    <property name="java.vm.version" value="1.5.0_16-b02" />
+    <property name="web.dir" value="web" />
+    <property name="ant.library.dir" value="/home/ste/EclipseInstallation/eclipse/plugins/org.apache.ant_1.7.0.v200803061910/lib" />
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="src-test.dir" value="src-test" />
+    <property name="eclipse.pdebuild.scripts" value="/home/ste/EclipseInstallation/eclipse/plugins/org.eclipse.pde.build_3.4.1.R34x_v20081217/scripts//" />
+    <property name="user.home" value="/home/ste" />
+    <property name="java.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="tmp.dir" value="tmp" />
+    <property name="java.library.path" value="/usr/lib/jvm/java-1.5.0-sun-1.5.0.16/jre/lib/amd64/server:/usr/lib/jvm/java-1.5.0-sun-1.5.0.16/jre/lib/amd64:/usr/lib/jvm/java-1.5.0-sun-1.5.0.16/jre/../lib/amd64:/usr/lib64/xulrunner-addons" />
+    <property name="java.vendor.url" value="http://java.sun.com/" />
+    <property name="build.reports" value="/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3/build/reports" />
+    <property name="java.vm.vendor" value="Sun Microsystems Inc." />
+    <property name="ant.file.Progetto Sistemi Distribuiti LS (versione EJB3)" value="/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3/ant/build.xml" />
+    <property name="java.runtime.name" value="Java(TM) 2 Runtime Environment, Standard Edition" />
+    <property name="java.class.path" value="/opt/jboss/client/FastInfoset.jar:/opt/jboss/client/activation.jar:/opt/jboss/client/antlr.jar:/opt/jboss/client/avalon-framework.jar:/opt/jboss/client/commons-codec.jar:/opt/jboss/client/commons-httpclient.jar:/opt/jboss/client/commons-logging.jar:/opt/jboss/client/concurrent.jar:/opt/jboss/client/ejb3-persistence.jar:/opt/jboss/client/getopt.jar:/opt/jboss/client/hibernate-annotations.jar:/opt/jboss/client/hibernate-client.jar:/opt/jboss/client/jacorb.jar:/opt/jboss/client/javassist.jar:/opt/jboss/client/jaxb-api.jar:/opt/jboss/client/jaxb-impl.jar:/opt/jboss/client/jaxb-xjc.jar:/opt/jboss/client/jaxws-rt.jar:/opt/jboss/client/jaxws-tools.jar:/opt/jboss/client/jboss-annotations-ejb3.jar:/opt/jboss/client/jboss-aop-jdk50-client.jar:/opt/jboss/client/jboss-aspect-jdk50-client.jar:/opt/jboss/client/jboss-client.jar:/opt/jboss/client/jboss-common-client.jar:/opt/jboss/client/jboss-deployment.jar:/opt/jboss/client/jboss-ejb3-client.jar:/opt/jboss/client/jboss-ejb3x.jar:/opt/jboss/client/jboss-iiop-client.jar:/opt/jboss/client/jboss-j2ee.jar:/opt/jboss/client/jboss-jaxrpc.jar:/opt/jboss/client/jboss-jaxws-ext.jar:/opt/jboss/client/jboss-jaxws.jar:/opt/jboss/client/jboss-jsr77-client.jar:/opt/jboss/client/jboss-remoting.jar:/opt/jboss/client/jboss-saaj.jar:/opt/jboss/client/jboss-serialization.jar:/opt/jboss/client/jboss-srp-client.jar:/opt/jboss/client/jboss-system-client.jar:/opt/jboss/client/jboss-transaction-client.jar:/opt/jboss/client/jboss-xml-binding.jar:/opt/jboss/client/jbossall-client.jar:/opt/jboss/client/jbosscx-client.jar:/opt/jboss/client/jbossha-client.jar:/opt/jboss/client/jbossjmx-ant.jar:/opt/jboss/client/jbossmq-client.jar:/opt/jboss/client/jbosssx-client.jar:/opt/jboss/client/jbossws-client.jar:/opt/jboss/client/jbossws-common.jar:/opt/jboss/client/jbossws-framework.jar:/opt/jboss/client/jbossws-jboss42.jar:/opt/jboss/client/jbossws-spi.jar:/opt/jboss/client/jettison.jar:/opt/jboss/client/jmx-client.jar:/opt/jboss/client/jmx-invoker-adaptor-client.jar:/opt/jboss/client/jnp-client.jar:/opt/jboss/client/log4j.jar:/opt/jboss/client/logkit.jar:/opt/jboss/client/mail.jar:/opt/jboss/client/policy.jar:/opt/jboss/client/scout.jar:/opt/jboss/client/servlet-api.jar:/opt/jboss/client/stax-api.jar:/opt/jboss/client/stax-ex.jar:/opt/jboss/client/streambuffer.jar:/opt/jboss/client/trove.jar:/opt/jboss/client/wsdl4j.jar:/opt/jboss/client/wstx.jar:/opt/jboss/client/xmlsec.jar:/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3/build/tests/classes:/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3/lib/compile-time/ejb3-persistence.jar:/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3/lib/compile-time/hibernate3.jar:/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3/lib/compile-time/j2ee.jar:/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3/lib/compile-time/jboss-ejb3x.jar:/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3/lib/compile-time/jboss-system.jar:/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3/lib/compile-time/junit-4.4.jar:/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3/lib/deploy-time/log4j-1.2.15.jar:/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3/build/classes:/home/ste/EclipseInstallation/eclipse/plugins/org.apache.ant_1.7.0.v200803061910/lib/ant-launcher.jar:/home/ste/EclipseInstallation/eclipse/plugins/org.apache.ant_1.7.0.v200803061910/lib/ant.jar:/home/ste/EclipseInstallation/eclipse/plugins/org.apache.ant_1.7.0.v200803061910/lib/ant-junit.jar" />
+    <property name="ant.version" value="Apache Ant version 1.7.0 compiled on December 13 2006" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="java.vm.specification.version" value="1.0" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="database.file" value="sampleProjectDB" />
+    <property name="sun.os.patch.level" value="unknown" />
+    <property name="eclipse.pdebuild.home" value="/home/ste/EclipseInstallation/eclipse/plugins/org.eclipse.pde.build_3.4.1.R34x_v20081217/.//" />
+    <property name="java.io.tmpdir" value="/tmp" />
+    <property name="deploy.path" value="/opt/jboss/server/default/deploy" />
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi" />
+    <property name="conf.dir" value="/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3/bootstrap" />
+    <property name="os.arch" value="amd64" />
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment" />
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-1.5.0-sun-1.5.0.16/jre/lib/ext" />
+    <property name="user.dir" value="/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3/ant" />
+    <property name="shutdown.embedded.jboss" value="true" />
+    <property name="line.separator" value="
+" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="basedir" value="/home/ste/WorkspaceVari/workspace-JBPM/ProgettoSistemiDistribuitiLS_EJB3" />
+    <property name="ant.java.version" value="1.5" />
+    <property name="ant.core.lib" value="/home/ste/EclipseInstallation/eclipse/plugins/org.apache.ant_1.7.0.v200803061910/lib/ant.jar" />
+    <property name="file.encoding" value="UTF-8" />
+    <property name="java.specification.version" value="1.5" />
+    <property name="src.dir" value="src" />
+    <property name="webapp.name" value="Progetto_EJB3" />
+  </properties>
+  <testcase classname="it.unibo.sdls.sampleproject.dao.tests.online.AuthorDAOTest" name="addAuthor" time="0.514" />
+  <testcase classname="it.unibo.sdls.sampleproject.dao.tests.online.AuthorDAOTest" name="addAuthor_andRelatedBooks" time="0.466" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
